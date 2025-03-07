@@ -62,6 +62,7 @@ jobs:
               ;;
           esac
           wget -O test.txt "$URL"
+          ls
 
       - name: Compile C++ program
         run: g++ -o main main.cpp
