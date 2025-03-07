@@ -4,9 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       input_url:
-        description: 'URL of the input file'
-        required: true
-        default: 'https://example.com/input.txt'
+        description: 'Select the URL of the input file'
+        type: choice  # Kiểu input là menu thả xuống
+        required: true  # Bắt buộc chọn
+        options:
+          - 'https://drive.google.com/file/d/1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs/view?usp=drive_link'
+          - 'https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view?usp=drive_link'
+          - 'https://drive.google.com/file/d/1h__8wvhqLmrJAxsMIzNucNSzCqvsyn0z/view?usp=drive_link'
+          - 'https://drive.google.com/file/d/1QBDCAqcmjCXSWVqIZHGWkInzpNzzSeXi/view?usp=drive_link'
+          - 'https://drive.google.com/file/d/1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8/view?usp=drive_link'
+        # default: 'https://drive.google.com/file/d/1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs/view?usp=drive_link'  # Giá trị mặc định
 
 jobs:
   build-and-run:
