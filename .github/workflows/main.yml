@@ -38,10 +38,6 @@ jobs:
           echo "=== Disk Info ==="
           df -h  # Thông tin ổ cứng
 
-      - name: Show selected option
-        run: |
-          echo "Selected input: ${{ github.event.inputs.input_url }}"
-
       - name: Download input file
         run: |
           case "${{ github.event.inputs.input_url }}" in
