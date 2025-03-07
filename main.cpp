@@ -77,6 +77,8 @@ int main() {
   while (cin >> x) a.push_back(x);
   bubbleSort(a);
   auto stop = high_resolution_clock::now();
+  for(int x : a) cout << x << " ";
+  cout << endl;
   // End code
 
   // Measure execution time
