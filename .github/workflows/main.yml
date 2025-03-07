@@ -4,25 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       input_url:
-        description: 'Select the URL of the input file'
-        type: choice  # Kiểu input là menu thả xuống
-        required: true  # Bắt buộc chọn
-        options:
-          - 'Test 1'
-          - 'Test 2'
-          - 'Test 3'
-          - 'Test 4'
-          - 'Test 5'
-        default: 'Test 1'  # Giá trị mặc định
+        description: 'URL of the input file'
+        required: true
+        default: 'https://example.com/input.txt'
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
 
     steps:
+      # Bước 1: Checkout mã nguồn từ repository
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Bước 2: Cài đặt g++
       - name: Install g++
         run: sudo apt-get update && sudo apt-get install -y g++
 
@@ -37,40 +32,18 @@ jobs:
           echo
           echo "=== Disk Info ==="
           df -h  # Thông tin ổ cứng
-
-      - name: Show selected option
-        run: |
-          echo "Selected input: ${{ github.event.inputs.input_url }}"
-
+      # Bước 3: Tải tệp đầu vào lớn từ URL bên ngoài
       - name: Download input file
         run: |
-          case "${{ github.event.inputs.input_url }}" in
-            "Test 1")
-              URL="https://drive.google.com/file/d/1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs/view?usp=drive_link"
-              ;;
-            "Test 2")
-              URL="https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view"
-              ;;
-            "Test 3")
-              URL="https://drive.google.com/file/d/1h__8wvhqLmrJAxsMIzNucNSzCqvsyn0z/view"
-              ;;
-            "Test 4")
-              URL="https://drive.google.com/file/d/1QBDCAqcmjCXSWVqIZHGWkInzpNzzSeXi/view"
-              ;;
-            "Test 5")
-              URL="https://drive.google.com/file/d/1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8/view"
-              ;;
-          esac
-          wget -O test.txt "$URL"
-
+          wget -O test.txt "${{ github.event.inputs.input_url }}"
+      # Bước 4: Biên dịch chương trình C++
       - name: Compile C++ program
         run: g++ -o main main.cpp
 
+      # Bước 5: Chạy chương trình
       - name: Run C++ program
-        run: | 
-          ls
-          ./main
-          
+        run: ./main
 
+      # Bước 5.1: In kết quả ra
       - name: In ket qua
         run: cat output.txt
