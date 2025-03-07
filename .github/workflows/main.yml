@@ -21,7 +21,7 @@ jobs:
       # Bước 3: Tải tệp đầu vào lớn từ URL bên ngoài
       - name: Download input file
         run: |
-          wget -O input.txt "https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view?usp=sharing"
+          wget -O test2.txt "https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view?usp=sharing"
         # Thay YOUR_INPUT_FILE_URL bằng URL thực tế (Google Drive, Dropbox, v.v.)
 
       # Bước 4: Biên dịch chương trình C++
