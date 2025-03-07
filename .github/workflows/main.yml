@@ -20,11 +20,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Bước 1: Checkout mã nguồn từ repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Bước 2: Cài đặt g++
       - name: Install g++
         run: sudo apt-get update && sudo apt-get install -y g++
 
@@ -40,7 +38,10 @@ jobs:
           echo "=== Disk Info ==="
           df -h  # Thông tin ổ cứng
 
-      # Bước 3: Tải tệp đầu vào lớn từ URL bên ngoài
+      - name: Show selected option
+        run: |
+          echo "Selected input: ${{ github.event.inputs.input_url }}"
+
       - name: Download input file
         run: |
           case "${{ github.event.inputs.input_url }}" in
@@ -62,14 +63,11 @@ jobs:
           esac
           wget -O test.txt "$URL"
 
-      # Bước 4: Biên dịch chương trình C++
       - name: Compile C++ program
         run: g++ -o main main.cpp
 
-      # Bước 5: Chạy chương trình
       - name: Run C++ program
         run: ./main
 
-      # Bước 5.1: In kết quả ra
       - name: In ket qua
         run: cat output.txt
