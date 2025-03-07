@@ -42,19 +42,19 @@ jobs:
         run: |
           case "${{ github.event.inputs.input_url }}" in
             "Test 1")
-              URL="https://drive.usercontent.google.com/download?id=1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs&export=download"
+              URL="https://drive.google.com/uc?export=download&id=1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs"
               ;;
             "Test 2")
-              URL="https://drive.usercontent.google.com/download?id=1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo&export=download"
+              URL="https://drive.google.com/uc?export=download&id=1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo"
               ;;
             "Test 3")
-              URL="https://drive.usercontent.google.com/download?id=1h__8wvhqLmrJAxsMIzNucNSzCqvsyn0z&export=download"
+              URL="https://drive.google.com/uc?export=download&id=1h__8wvhqLmrJAxsMIzNucNSzCqvsyn0z"
               ;;
             "Test 4")
-              URL="https://drive.usercontent.google.com/download?id=1QBDCAqcmjCXSWVqIZHGWkInzpNzzSeXi&export=download"
+              URL="https://drive.google.com/uc?export=download&id=1QBDCAqcmjCXSWVqIZHGWkInzpNzzSeXi"
               ;;
             "Test 5")
-              URL="https://drive.usercontent.google.com/download?id=1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8&export=download"
+              URL="https://drive.google.com/uc?export=download&id=1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8"
               ;;
           esac
           wget -O test.txt "$URL"
