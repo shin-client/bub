@@ -1,0 +1,44 @@
+name: Build and Run C++ with Input/Output
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Bước 1: Checkout mã nguồn từ repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Bước 2: Cài đặt g++
+      - name: Install g++
+        run: sudo apt-get update && sudo apt-get install -y g++
+
+      # Bước 3: Tải tệp đầu vào lớn từ URL bên ngoài
+      - name: Download input file
+        run: |
+          wget -O input.txt "https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view?usp=sharing"
+        # Thay YOUR_INPUT_FILE_URL bằng URL thực tế (Google Drive, Dropbox, v.v.)
+
+      # Bước 4: Biên dịch chương trình C++
+      - name: Compile C++ program
+        run: g++ -o my_program main.cpp
+
+      # Bước 5: Chạy chương trình
+      - name: Run C++ program
+        run: ./my_program
+
+      # Bước 5.1: In kết quả ra
+      - name: In ket qua
+        run: cat output.txt
+
+      # Bước 6: Lưu tệp kết quả làm artifact
+      - name: Upload output file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-file
+          path: output.txt
