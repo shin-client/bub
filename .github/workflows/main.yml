@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-run:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       # Bước 1: Checkout mã nguồn từ repository
