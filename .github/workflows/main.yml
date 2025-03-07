@@ -1,4 +1,4 @@
-name: Build and Run C++ with Input/Output
+name: LAB4 SapXep
 
 on:
   workflow_dispatch:
