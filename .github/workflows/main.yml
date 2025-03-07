@@ -1,9 +1,7 @@
 name: Build and Run C++ with Input/Output
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build-and-run:
