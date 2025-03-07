@@ -71,11 +71,10 @@ int main() {
   freopen("output.txt", "w", stdout);
 
   // Code
-
-  int x;
+  int n = 1000;
   vector<int> a;
   auto start = high_resolution_clock::now();
-  while (cin >> x) a.push_back(x);
+  for (int &x : a) cin >> x;
   bubbleSort(a);
   auto stop = high_resolution_clock::now();
   for (int x : a) cout << x << " ";
