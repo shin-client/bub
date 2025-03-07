@@ -72,7 +72,7 @@ int main() {
 
   // Code
 
-  int n = 1000000;
+  int n = 10000000;
   vector<int> a(n);
   auto start = high_resolution_clock::now();
   for (int &x : a) cin >> x;
