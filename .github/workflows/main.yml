@@ -54,7 +54,7 @@ jobs:
               URL="https://drive.google.com/uc?id=1QBDCAqcmjCXSWVqIZHGWkInzpNzzSeXi"
               ;;
             "Test 5")
-              URL="https://drive.google.com/uc?id=download&id=1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8"
+              URL="https://drive.google.com/uc?id=1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8"
               ;;
           esac
           pip install gdown
