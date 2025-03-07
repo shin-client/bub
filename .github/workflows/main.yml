@@ -62,13 +62,15 @@ jobs:
               ;;
           esac
           wget -O test.txt "$URL"
-          ls
 
       - name: Compile C++ program
         run: g++ -o main main.cpp
 
       - name: Run C++ program
-        run: ./main
+        run: | 
+          ls
+          ./main
+          
 
       - name: In ket qua
         run: cat output.txt
