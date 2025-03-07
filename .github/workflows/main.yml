@@ -42,22 +42,23 @@ jobs:
         run: |
           case "${{ github.event.inputs.input_url }}" in
             "Test 1")
-              URL="https://drive.google.com/uc?export=download&id=1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs"
+              URL="https://drive.google.com/uc?id=1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs"
               ;;
             "Test 2")
-              URL="https://drive.google.com/uc?export=download&id=1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo"
+              URL="https://drive.google.com/uc?id=1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo"
               ;;
             "Test 3")
-              URL="https://drive.google.com/uc?export=download&id=1h__8wvhqLmrJAxsMIzNucNSzCqvsyn0z"
+              URL="https://drive.google.com/uc?id=1h__8wvhqLmrJAxsMIzNucNSzCqvsyn0z"
               ;;
             "Test 4")
-              URL="https://drive.google.com/uc?export=download&id=1QBDCAqcmjCXSWVqIZHGWkInzpNzzSeXi"
+              URL="https://drive.google.com/uc?id=1QBDCAqcmjCXSWVqIZHGWkInzpNzzSeXi"
               ;;
             "Test 5")
-              URL="https://drive.google.com/uc?export=download&id=1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8"
+              URL="https://drive.google.com/uc?id=download&id=1iyDPj_QK_2ZOerP_QFmzm6q7ePgOBrA8"
               ;;
           esac
-          wget -O test.txt "$URL"
+          pip install gdown
+          gdown -O test.txt "$URL"
 
       - name: Compile C++ program
         run: g++ -o main main.cpp
