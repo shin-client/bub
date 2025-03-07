@@ -76,7 +76,7 @@ int main() {
   vector<int> a;
   auto start = high_resolution_clock::now();
   while (cin >> x) a.push_back(x);
-  interchangeSort(a);
+  bubbleSort(a);
   auto stop = high_resolution_clock::now();
 
   // End code
