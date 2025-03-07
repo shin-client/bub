@@ -21,6 +21,18 @@ jobs:
       - name: Install g++
         run: sudo apt-get update && sudo apt-get install -y g++
 
+      - name: Show hardware info
+        run: |
+          echo "=== CPU Info ==="
+          cat /proc/cpuinfo | grep "model name" | head -n 1  # Tên CPU
+          echo "Number of CPUs: $(nproc)"  # Số lõi CPU
+          echo
+          echo "=== Memory Info ==="
+          free -h  # Thông tin RAM
+          echo
+          echo "=== Disk Info ==="
+          df -h  # Thông tin ổ cứng
+
       # Bước 3: Tải tệp đầu vào lớn từ URL bên ngoài
       - name: Download input file
         run: |
