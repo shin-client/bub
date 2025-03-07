@@ -76,7 +76,7 @@ int main() {
   vector<int> a(n);
   auto start = high_resolution_clock::now();
   for (int &x : a) cin >> x;
-  bubbleSort(a);
+  // bubbleSort(a);
   auto stop = high_resolution_clock::now();
 
   // End code

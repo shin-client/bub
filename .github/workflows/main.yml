@@ -26,11 +26,11 @@ jobs:
 
       # Bước 4: Biên dịch chương trình C++
       - name: Compile C++ program
-        run: g++ -o my_program main.cpp
+        run: g++ -o main main.cpp
 
       # Bước 5: Chạy chương trình
       - name: Run C++ program
-        run: ./my_program
+        run: ./main
 
       # Bước 5.1: In kết quả ra
       - name: In ket qua
