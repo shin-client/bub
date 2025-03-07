@@ -46,7 +46,7 @@ jobs:
         run: |
           case "${{ github.event.inputs.input_url }}" in
             "Test 1")
-              URL="https://drive.google.com/file/d/1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs/view"
+              URL="https://drive.google.com/file/d/1NcHkXl0ky3lcISsV7lrQ0i6dTzYjjJJs/view?usp=drive_link"
               ;;
             "Test 2")
               URL="https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view"
