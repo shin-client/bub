@@ -67,7 +67,7 @@ void quickSort(vector<int> &a, int l, int r, bool greater = false){
 
 int main() {
   faster();
-  freopen("test2.txt", "r", stdin);
+  freopen("test.txt", "r", stdin);
   freopen("output.txt", "w", stdout);
 
   // Code
@@ -76,7 +76,7 @@ int main() {
   vector<int> a(n);
   auto start = high_resolution_clock::now();
   for (int &x : a) cin >> x;
-  // bubbleSort(a);
+  bubbleSort(a);
   auto stop = high_resolution_clock::now();
 
   // End code

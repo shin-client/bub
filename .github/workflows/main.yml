@@ -21,7 +21,7 @@ jobs:
       # Bước 3: Tải tệp đầu vào lớn từ URL bên ngoài
       - name: Download input file
         run: |
-          wget -O test2.txt "https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view?usp=sharing"
+          wget -O test.txt "https://drive.google.com/file/d/1OB8-89XhYBRTzUBdvboDKOU3eSr4_5wo/view?usp=sharing"
         # Thay YOUR_INPUT_FILE_URL bằng URL thực tế (Google Drive, Dropbox, v.v.)
 
       # Bước 4: Biên dịch chương trình C++
@@ -35,10 +35,3 @@ jobs:
       # Bước 5.1: In kết quả ra
       - name: In ket qua
         run: cat output.txt
-
-      # Bước 6: Lưu tệp kết quả làm artifact
-      - name: Upload output file as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: output-file
-          path: output.txt
